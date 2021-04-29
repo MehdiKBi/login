@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 body {
-  background-color: rgb(255, 255, 255);
+  background-image: url("./img/Group\ 66253.png");
 
 }
 
@@ -45,3 +45,10 @@ h1{
 }
 
 
+#img-logo{
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  margin: 50px;
+
+}

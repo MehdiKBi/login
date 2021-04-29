@@ -7,14 +7,14 @@ const Form = () => {
         <label className="form-lable text-start">Bitte fügen Sie Ihre E-Mail-Adresse ein</label>
         </div>
 
-        <input id="inp_email" placeholder="E-Mail-Adresse" className="form-control"/>
+        <input  placeholder="E-Mail-Adresse" className="form-control"/>
 
 
         <div className="text-start">
-        <label className="form-lable text-start mt-5">Passwort</label>
+        <label type="password" className="form-lable text-start mt-3">Passwort</label>
         </div>
 
-        <input id="inp_pass" placeholder="Passwort" className="form-control" width="100px"/>
+        <input placeholder="Passwort" className="form-control" width="100px"/>
 
         <div className="text-end">
         <label className="form-lable">Passwort vergessen?</label>
