@@ -1,11 +1,11 @@
-import a from "../img/logo.png"
+import corplifeLogo from "../img/logo.png"
 
 
 
 const Logo = () => {
     return ( 
         <div className="logo">
-            <img id="img-logo"  src={a}/>
+            <img id="img-logo" src={corplifeLogo}/>
         </div>
      );
 }
