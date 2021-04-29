@@ -34,8 +34,8 @@ h1{
 
 #btn{
 
-  background: rgb(250,45,124);
-  background: linear-gradient(90deg, rgba(250,45,124,1) 20%, rgba(253,85,43,1) 50%, rgba(249,130,100,1) 85%);
+  background: rgb(253,43,124);
+  background: linear-gradient(90deg, rgba(253,43,124,1) 20%, rgba(253,85,43,1) 55%);
   width: 500px;
   height: 40px;
   color: white;
@@ -44,9 +44,4 @@ h1{
   font-size: large;
 }
 
-/* #inp_email{
-  width: 500px;
-}
-#inp_pass{
-  width: 500px;
-} */
+
