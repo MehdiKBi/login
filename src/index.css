@@ -14,16 +14,16 @@ body {
 }
 
 .mainBoard{
-  width: 657.45px;
+  width: 600px;
   height: 470.67px;
   background-color: white;
   border-radius: 20px;
   /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  margin-top: 150px;
+  margin-top: 70px;
 }
 
-h1{
+#title_in_box{
   font-family: 'Montserrat', sans-serif;
   font-size: 150%;
   margin-top: 10%;
@@ -48,8 +48,24 @@ h1{
 
 #img-logo{
   position: absolute;
-  width: 200px;
-  height: 50px;
+  width: 100px;
+  height: 25px;
   margin: 50px;
 
 }
+
+/* #the_eye_icon{
+  /* background: url("./img/ic-actions-closed-view.png") no-repeat scroll 7px 7px; */
+  
+
+
+
+
+/* .password-toogle-icon{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  z-index: 1000;
+  cursor: pointer;
+} */
+
