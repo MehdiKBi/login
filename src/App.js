@@ -1,17 +1,28 @@
+import react from "react";
 import Form from "./component/form";
 import Logo from "./component/logo";
-import Home from "./component/home"
-
+import Home from "./component/home";
+import Passvergessen from "./component/passvergessen";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <Logo />
+
       <div className="App">
-        <div className="mainBoard text-center">
-          <Home/>
-          {/* <Form/> */}
-        </div>
+        <Router>
+          <div className="mainBoard text-center">
+            <Switch>
+            <Route exact path="/"><Form /></Route>
+              <Route path="/home"><Home/></Route>
+              <Route path="/passwortvergessen"><Passvergessen/></Route>
+
+            </Switch>
+
+           
+          </div>
+        </Router>
       </div>
     </div>
   );
