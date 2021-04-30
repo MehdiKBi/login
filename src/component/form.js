@@ -1,13 +1,9 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import {motion} from "framer-motion";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import eye from "../img/eye.png"
 import eyeOpen from "../img/ic-actions-closed-viewj.png";
-
-
-
-
 
 
 
@@ -50,21 +46,27 @@ const history=useHistory();
 
   };
 
+  const formVariant ={
+    hidden:{
+      opacity:0
+    },
+    visible:{
+      opacity:1,
+      transition:{
+        duration:.70
+      }
 
-  // useEffect(()=>{
-  //   if(setPassword!==0){
-  //     setError(true)
-  //   }else{
-  //     setError(false)
-  //   }
-  // },[])
-
-
+    }
+  }
 
 
   return (
     
-    <form onSubmit={handelSubmit} className="m-5">
+    <motion.form 
+      initial="hidden"
+      animate="visible"
+      variants={formVariant}
+    onSubmit={handelSubmit} className="m-5">
           <h1 id="title_in_box" className="">Bitte loggen Sie sich ein um fortzufahren</h1>
 
       <div className="text-start mt-5">
@@ -124,7 +126,7 @@ const history=useHistory();
       </button>
 
 
-    </form>
+    </motion.form>
   );
 };
 

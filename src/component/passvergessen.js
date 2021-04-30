@@ -10,6 +10,19 @@ const Passvergessen = () => {
   const [email, setEmail] = useState("");
 
 
+  const formVariant ={
+    hidden:{
+      opacity:0
+    },
+    visible:{
+      opacity:1,
+      transition:{
+        duration:.70
+      }
+
+    }
+  }
+
   const history=useHistory();
 
   const handelSubmit = (e) => {
@@ -39,7 +52,11 @@ const Passvergessen = () => {
 
 
     return ( 
-        <form onSubmit={handelSubmit} className="m-5">
+        <motion.form 
+        initial="hidden"
+        animate="visible"
+        variants={formVariant}
+        onSubmit={handelSubmit} className="m-5">
         <h1 id="title_in_box">Password Vergessen?</h1>
 
     <div className="text-start mt-5">
@@ -69,7 +86,7 @@ const Passvergessen = () => {
       Zurück zur Anmeldung
       </Link>
     </div>
-  </form>
+  </motion.form>
      );
 }
  

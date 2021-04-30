@@ -1,18 +1,34 @@
 import { Link } from "react-router-dom";
-import Form from "./form"
+import {motion} from "framer-motion";
+
+
 
 
 
 const Home = () => {
+  const formVariant ={
+    hidden:{
+      opacity:0
+    },
+    visible:{
+      opacity:1,
+      transition:{
+        duration:.70
+      }
+
+    }
+  }
+
+
   return (
-    <div className="home">
+    <motion.div 
+    initial="hidden"
+    animate="visible"
+    variants={formVariant}
+    className="home">
       <h1 className="m-5">Check your inbox</h1>
       <p>An email with further instructions has been sent to </p>
 
-      
-     
-
-      
       
 
         <div className="wrap">
@@ -26,7 +42,7 @@ const Home = () => {
       <Link to="/" className="text-start txt_1">Return to Log in </Link>
       <p className="text-end txt_2">Resent Recovery Link</p>
 
-    </div>
+    </motion.div>
   );
 };
 
