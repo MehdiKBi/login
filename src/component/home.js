@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 
+
+
 const Home = () => {
   return (
     <div className="home">
       <h1 className="m-5">Check your inbox</h1>
       <p>An email with further instructions has been sent to </p>
 
-      <h3 className="mt-5">alex.mayer12 @gmail.com</h3>
+      <h3 className="mt-5"></h3>
+      
+      
 
         <div className="wrap">
         <p className="text-start mt-5" id="issue_repor_message" >

@@ -34,7 +34,6 @@ p , h1{
 
 
 #btn{
-
   background: rgb(253,43,124);
   background: linear-gradient(90deg, rgba(253,43,124,1) 20%, rgba(253,85,43,1) 55%);
   width: 500px;
@@ -90,8 +89,8 @@ a{
 
 #eye{
   position: absolute;
-  /* padding-left: 260px;
-  margin-top: -25px; */
+  padding-left: 200px;
+  margin-top: -30px;
   cursor: pointer;
   z-index: 1000;
 }

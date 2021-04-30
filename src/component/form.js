@@ -3,7 +3,8 @@ import {motion} from "framer-motion";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import eye from "../img/eye.png"
-import eyeOpen from "../img/ic-actions-closed-viewj.png"
+import eyeOpen from "../img/ic-actions-closed-viewj.png";
+
 
 
 
@@ -16,8 +17,8 @@ const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
-  const [passwordToggle, setPasswordToggle] = useState("text");
+  const [showPassword, setShowPassword] = useState(true);
+  const [passwordToggle, setPasswordToggle] = useState("password");
 
 
 
@@ -80,9 +81,10 @@ const history=useHistory();
         type="text"
       />
 
+
+
       <div className="text-start">
         <label className="form-lable text-start mt-3">Passwort</label>
-
       </div>
 
 
@@ -99,10 +101,12 @@ const history=useHistory();
           placeholder="Passwort"
           className="form-control"
         />
+
+
            {showPassword ?
-           <motion.img  onClick={(e) =>{setShowPassword(false);setPasswordToggle("password");}} id="eye" src={eye}/>
+           <motion.img  onClick={(e) =>{setShowPassword(false);setPasswordToggle("text");}} id="eye" src={eye}/>
            :
-           <motion.img onClick={(e) =>{setShowPassword(true);setPasswordToggle("text");}}  id="eye" src={eyeOpen}/>}
+           <motion.img onClick={(e) =>{setShowPassword(true);setPasswordToggle("password");}}  id="eye" src={eyeOpen}/>}
 
       </div>
 
@@ -118,6 +122,7 @@ const history=useHistory();
       <button id="btn" className="mt-5">
         Login
       </button>
+
 
     </form>
   );
