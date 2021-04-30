@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Form from "./form"
 
 
 
@@ -8,7 +9,9 @@ const Home = () => {
       <h1 className="m-5">Check your inbox</h1>
       <p>An email with further instructions has been sent to </p>
 
-      <h3 className="mt-5"></h3>
+      
+     
+
       
       
 
