@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
     <div className="home">
@@ -14,7 +16,7 @@ const Home = () => {
         </div>
       
 
-      <p className="text-start txt_1">Return to Log in </p>
+      <Link to="/" className="text-start txt_1">Return to Log in </Link>
       <p className="text-end txt_2">Resent Recovery Link</p>
 
     </div>

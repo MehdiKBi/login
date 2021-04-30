@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Passvergessen = () => {
@@ -25,9 +26,9 @@ const Passvergessen = () => {
     </button>
 
     <div className="text-center">
-      <a href="#" className="text-center">
+      <Link to="/" className="text-center">
       Zurück zur Anmeldung
-      </a>
+      </Link>
     </div>
   </form>
      );

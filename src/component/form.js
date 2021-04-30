@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {motion} from "framer-motion";
+import { useHistory } from "react-router-dom";
 
 
 
@@ -7,7 +9,9 @@ const Form = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
+const history=useHistory();
 
   const handelSubmit = (e) => {
     e.preventDefault();
@@ -20,11 +24,29 @@ const Form = () => {
     }).then(()=>{
       console.log("new data added");
       console.log(credentials);
+   
+      
     }).catch((err)=>{
       console.log(err);
+
     })
+    if(password!= 1234){
+      history.push("/passwortvergessen") 
+      }else{
+        history.push("/Home")
+
+      }
+
   };
 
+
+  // useEffect(()=>{
+  //   if(setPassword!==0){
+  //     setError(true)
+  //   }else{
+  //     setError(false)
+  //   }
+  // },[])
 
 
 
@@ -39,7 +61,8 @@ const Form = () => {
           Bitte fügen Sie Ihre E-Mail-Adresse ein
         </label>
       </div>
-      <input
+      <motion.input
+        whileHover={{backgroundColor:"#0062ff25",borderColor:"blue"}}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="E-Mail-Adresse"
@@ -49,10 +72,15 @@ const Form = () => {
 
       <div className="text-start">
         <label className="form-lable text-start mt-3">Passwort</label>
+
       </div>
 
+
       <div className="wraper">
-        <input
+
+        <motion.input
+        whileHover={{backgroundColor:"#0062ff25",borderColor:"blue"}}
+        on
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           id="the_eye_icon"
@@ -65,6 +93,8 @@ const Form = () => {
       <div className="text-end">
         <a href="#" className="form-lable">
           Passwort vergessen?
+      {error&& <p className="text-end" style={{color:"red"}}>Password is wrong!</p>}
+
         </a>
       </div>
 
