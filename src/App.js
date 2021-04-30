@@ -17,10 +17,7 @@ function App() {
             <Route exact path="/"><Form /></Route>
               <Route path="/home"><Home/></Route>
               <Route path="/passwortvergessen"><Passvergessen/></Route>
-
             </Switch>
-
-           
           </div>
         </Router>
       </div>

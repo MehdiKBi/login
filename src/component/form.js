@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import {motion} from "framer-motion";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import eye from "../img/eye.png"
+import eyeOpen from "../img/ic-actions-closed-viewj.png"
+
+
+
 
 
 
@@ -10,6 +16,10 @@ const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [passwordToggle, setPasswordToggle] = useState("text");
+
+
 
 const history=useHistory();
 
@@ -79,28 +89,36 @@ const history=useHistory();
       <div className="wraper">
 
         <motion.input
+
         whileHover={{backgroundColor:"#0062ff25",borderColor:"blue"}}
-        on
+
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           id="the_eye_icon"
-          type="password"
+          type={passwordToggle}
           placeholder="Passwort"
           className="form-control"
         />
+           {showPassword ?
+           <motion.img  onClick={(e) =>{setShowPassword(false);setPasswordToggle("password");}} id="eye" src={eye}/>
+           :
+           <motion.img onClick={(e) =>{setShowPassword(true);setPasswordToggle("text");}}  id="eye" src={eyeOpen}/>}
+
       </div>
 
       <div className="text-end">
-        <a href="#" className="form-lable">
+        <Link to="/passwortvergessen" className="form-lable">
           Passwort vergessen?
       {error&& <p className="text-end" style={{color:"red"}}>Password is wrong!</p>}
+      
 
-        </a>
+        </Link>
       </div>
 
       <button id="btn" className="mt-5">
         Login
       </button>
+
     </form>
   );
 };

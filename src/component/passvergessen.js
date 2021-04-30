@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import {motion} from "framer-motion";
+
 
 
 const Passvergessen = () => {
@@ -12,7 +14,8 @@ const Passvergessen = () => {
       </label>
     </div>
 
-    <input     
+    <motion.input    
+      whileHover={{backgroundColor:"#0062ff25",borderColor:"blue"}} 
       placeholder="E-Mail-Adresse"
       className="form-control"
       type="text"

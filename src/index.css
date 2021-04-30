@@ -55,9 +55,7 @@ p , h1{
 
 }
 
-/* #the_eye_icon{
-  /* background: url("./img/ic-actions-closed-view.png") no-repeat scroll 7px 7px; */
-  
+
 
 
 
@@ -87,4 +85,13 @@ a{
 }
 .txt_2{
   padding-right: 10%;
+}
+
+
+#eye{
+  position: absolute;
+  /* padding-left: 260px;
+  margin-top: -25px; */
+  cursor: pointer;
+  z-index: 1000;
 }
