@@ -5,12 +5,11 @@ body {
 
 }
 
-.App{
+.App , .wrap{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items:center;
-
 }
 
 .mainBoard{
@@ -74,4 +73,17 @@ p , h1{
 a{
   text-decoration: none;
   cursor: pointer;
+}
+
+#issue_repor_message{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.199);
+  width: 80%;
+  text-justify: auto;
+}
+
+.txt_1{
+  padding-left: 10%;
+}
+.txt_2{
+  padding-right: 10%;
 }

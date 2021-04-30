@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+
 
 
 const Form = () => {
@@ -30,8 +30,11 @@ const Form = () => {
 
 
   return (
+    
     <form onSubmit={handelSubmit} className="m-5">
-      <div className="text-start">
+          <h1 id="title_in_box" className="">Bitte loggen Sie sich ein um fortzufahren</h1>
+
+      <div className="text-start mt-5">
         <label className="form-lable text-start">
           Bitte fügen Sie Ihre E-Mail-Adresse ein
         </label>
