@@ -28,7 +28,9 @@ body {
   font-size: 150%;
   margin-top: 10%;
   font-weight: bolder;
-
+}
+p , h1{
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -50,7 +52,7 @@ body {
   position: absolute;
   width: 100px;
   height: 25px;
-  margin: 50px;
+  margin: 20px;
 
 }
 
@@ -69,3 +71,7 @@ body {
   cursor: pointer;
 } */
 
+a{
+  text-decoration: none;
+  cursor: pointer;
+}

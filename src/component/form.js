@@ -1,35 +1,75 @@
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+
+
 const Form = () => {
-    return ( 
-
-<form className="m-5">
-    
-        
-        <div className="text-start">
-        <label className="form-lable text-start">Bitte fügen Sie Ihre E-Mail-Adresse ein</label>
-        </div>
-
-        <input  placeholder="E-Mail-Adresse" className="form-control"/>
 
 
-        <div className="text-start">
-        <label type="password" className="form-lable text-start mt-3">Passwort</label>
-        </div>
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
 
-        <div className="wraper"> 
-        <input id="the_eye_icon" type="password"  placeholder="Passwort" className="form-control"/>
-        </div>
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    const credentials= {email,password};
+    // console.log(credentials);
+    fetch("http://localhost:8000/credentials",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body: JSON.stringify(credentials)
+    }).then(()=>{
+      console.log("new data added");
+      console.log(credentials);
+    }).catch((err)=>{
+      console.log(err);
+    })
+  };
 
 
 
-        <div className="text-end">
-        <label  className="form-lable">Passwort vergessen?</label>
-        </div>
 
-         <button id="btn" className="mt-5">Login</button>
-</form>
 
-     );
-}
- 
+  return (
+    <form onSubmit={handelSubmit} className="m-5">
+      <div className="text-start">
+        <label className="form-lable text-start">
+          Bitte fügen Sie Ihre E-Mail-Adresse ein
+        </label>
+      </div>
+      <input
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="E-Mail-Adresse"
+        className="form-control"
+        type="text"
+      />
+
+      <div className="text-start">
+        <label className="form-lable text-start mt-3">Passwort</label>
+      </div>
+
+      <div className="wraper">
+        <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          id="the_eye_icon"
+          type="password"
+          placeholder="Passwort"
+          className="form-control"
+        />
+      </div>
+
+      <div className="text-end">
+        <a href="#" className="form-lable">
+          Passwort vergessen?
+        </a>
+      </div>
+
+      <button id="btn" className="mt-5">
+        Login
+      </button>
+    </form>
+  );
+};
+
 export default Form;
