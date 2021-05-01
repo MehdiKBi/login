@@ -15,7 +15,7 @@ const Form = () => {
   const [error, setError] = useState(false);
   const [showPassword, setShowPassword] = useState(true);
   const [passwordToggle, setPasswordToggle] = useState("password");
-  const [bg, setBg] = useState();
+  const [valid, setValid] = useState("form-control ");
 
 
 
@@ -41,16 +41,18 @@ const history=useHistory();
 
     })
     if(password=== "Corplife2021!" && email==="admin@corplife.at"){
-      history.push("/Home")
+      setValid("form-control is-valid")
+      setTimeout(()=>{
+        history.push("/Home")
+      },500)
 
       }else{
+      setValid("form-control is-invalid")
         setError(true)
         setTimeout(()=>{
         history.push("/passwortvergessen") 
         },1000)
-
       }
-
   };
 
   const formVariant ={
@@ -86,7 +88,7 @@ const history=useHistory();
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="E-Mail-Adresse"
-        className="form-control"
+        className={valid}
         type="text"
         required
       />
@@ -108,7 +110,7 @@ const history=useHistory();
           onChange={(e) => setPassword(e.target.value)}
           type={passwordToggle}
           placeholder="Passwort"
-          className="form-control"
+          className={valid}
           required
         />
 

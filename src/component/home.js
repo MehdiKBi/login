@@ -45,7 +45,7 @@ const Home = () => {
       <h1 className="m-5">Check your inbox</h1>
       <p>An email with further instructions has been sent to </p>
 
-      <Datadetail data={data}/>
+      <Datadetail  data={data}/>
 
         <div className="wrap">
         <p className="text-start mt-5" id="issue_repor_message" >

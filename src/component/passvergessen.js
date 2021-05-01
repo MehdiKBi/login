@@ -8,6 +8,8 @@ import { useHistory } from "react-router-dom";
 
 const Passvergessen = () => {
   const [email, setEmail] = useState("");
+  const [valid, setValid] = useState("form-control ");
+
 
 
   const formVariant ={
@@ -42,9 +44,13 @@ const Passvergessen = () => {
     })
 
     if(email==="admin@corplife.at"){
-      history.push("/Home")
+      setValid("form-control is-valid")
+      setTimeout(()=>{
+        history.push("/Home")
+      },500)
 
       }else{
+      setValid("form-control is-invalid")
         // setError(true)
         setTimeout(()=>{
         history.push("/passwortvergessen") 
@@ -70,10 +76,12 @@ const Passvergessen = () => {
     </div>
 
     <motion.input    
+
       whileFocus={{backgroundColor:"#0062ff25",borderColor:"blue"}} 
       placeholder="E-Mail-Adresse"
       className="form-control"
       type="text"
+      className={valid}
       value={email}
       onChange={(e)=>setEmail(e.target.value)}
     />
