@@ -15,6 +15,9 @@ const Form = () => {
   const [error, setError] = useState(false);
   const [showPassword, setShowPassword] = useState(true);
   const [passwordToggle, setPasswordToggle] = useState("password");
+  const [bg, setBg] = useState();
+
+
 
 
 
@@ -37,10 +40,14 @@ const history=useHistory();
       console.log(err);
 
     })
-    if(password!= 1234){
-      history.push("/passwortvergessen") 
+    if(password=== "Corplife2021!" && email==="admin@corplife.at"){
+      history.push("/Home")
+
       }else{
-        history.push("/Home")
+        setError(true)
+        setTimeout(()=>{
+        history.push("/passwortvergessen") 
+        },1000)
 
       }
 
@@ -53,7 +60,7 @@ const history=useHistory();
     visible:{
       opacity:1,
       transition:{
-        duration:.70
+        duration:.30
       }
 
     }
@@ -75,12 +82,13 @@ const history=useHistory();
         </label>
       </div>
       <motion.input
-        whileHover={{backgroundColor:"#0062ff25",borderColor:"blue"}}
+        whileFocus={{backgroundColor:"#0062ff25",borderColor:"blue"}}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="E-Mail-Adresse"
         className="form-control"
         type="text"
+        required
       />
 
 
@@ -93,15 +101,15 @@ const history=useHistory();
       <div className="wraper">
 
         <motion.input
-
-        whileHover={{backgroundColor:"#0062ff25",borderColor:"blue"}}
-
+        whileFocus={{backgroundColor:"#0062ff25",borderColor:"blue"}}
+        while
+          id="pass"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          id="the_eye_icon"
           type={passwordToggle}
           placeholder="Passwort"
           className="form-control"
+          required
         />
 
 
@@ -115,8 +123,11 @@ const history=useHistory();
       <div className="text-end">
         <Link to="/passwortvergessen" className="form-lable">
           Passwort vergessen?
-      {error&& <p className="text-end" style={{color:"red"}}>Password is wrong!</p>}
       
+          {error&& <motion.p 
+          animate={{y:-85}}
+          transition={{ease:"easeInOut"}}
+          className="text-end" style={{color:"red"}}>Password is wrong!</motion.p>}
 
         </Link>
       </div>

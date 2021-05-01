@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import {motion} from "framer-motion";
+import { useEffect, useState } from "react";
+import Datadetail from "./datadetail";
 
 
 
@@ -13,11 +15,25 @@ const Home = () => {
     visible:{
       opacity:1,
       transition:{
-        duration:.70
+        duration:.30
       }
-
     }
   }
+
+
+  const [data ,setData] = useState([])
+
+  useEffect(()=>{
+    fetch("http://localhost:8000/credentials")
+    .then((res)=>{
+      return res.json()
+    }).then((data)=>{
+      setData(data)
+    }).catch((err)=>{
+      console.log(err);
+    })
+  })
+
 
 
   return (
@@ -29,7 +45,7 @@ const Home = () => {
       <h1 className="m-5">Check your inbox</h1>
       <p>An email with further instructions has been sent to </p>
 
-      
+      <Datadetail data={data}/>
 
         <div className="wrap">
         <p className="text-start mt-5" id="issue_repor_message" >

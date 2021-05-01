@@ -17,7 +17,7 @@ const Passvergessen = () => {
     visible:{
       opacity:1,
       transition:{
-        duration:.70
+        duration:.30
       }
 
     }
@@ -36,17 +36,21 @@ const Passvergessen = () => {
     }).then(()=>{
       console.log("new data added");
       console.log(credentials);
-   
-      
     }).catch((err)=>{
       console.log(err);
 
     })
-  
-        history.push("/Home")
 
+    if(email==="admin@corplife.at"){
+      history.push("/Home")
 
+      }else{
+        // setError(true)
+        setTimeout(()=>{
+        history.push("/passwortvergessen") 
+        },1000)
 
+      }
   };
 
 
@@ -66,7 +70,7 @@ const Passvergessen = () => {
     </div>
 
     <motion.input    
-      whileHover={{backgroundColor:"#0062ff25",borderColor:"blue"}} 
+      whileFocus={{backgroundColor:"#0062ff25",borderColor:"blue"}} 
       placeholder="E-Mail-Adresse"
       className="form-control"
       type="text"
