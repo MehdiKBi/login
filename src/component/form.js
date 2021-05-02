@@ -22,14 +22,36 @@ const Form = () => {
 
 
 const history=useHistory();
+// const url = "http://localhost:8000/credentials"
+// const api = "https://api.corplife.at/v0/auth/tokens"
+
+// localStorage does required deviceName!!??
+
+// async function Login(){
+//   let item = {email,password}
+//   console.warn(item);
+//   let result = await fetch("https://api.corplife.at/v0/auth/tokens",{
+//     method:"POST",
+//     body: JSON.stringify(item),
+//     headers:{"Content-Type": 'application/json',
+//               "Accept": 'application/json',
+//               "deviceName":"web"
+//             }
+//   })
+//   result = await result.json();
+//   localStorage.setItem("user-info" , JSON.stringify(result))
+//   history.push("/home")
+//   }
+
+
+
 
   const handelSubmit = (e) => {
     e.preventDefault();
     const credentials= {email,password};
-    // console.log(credentials);
-    fetch("http://localhost:8000/credentials",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
+     fetch("https://api.corplife.at/v0/auth/tokens",{
+      method:'POST',
+      headers: {"Content-Type":"application/json"},
       body: JSON.stringify(credentials)
     }).then(()=>{
       console.log("new data added");
@@ -75,7 +97,7 @@ const history=useHistory();
       initial="hidden"
       animate="visible"
       variants={formVariant}
-    onSubmit={handelSubmit} className="m-5">
+     onSubmit={handelSubmit} className="m-5">
           <h1 id="title_in_box" className="">Bitte loggen Sie sich ein um fortzufahren</h1>
 
       <div className="text-start mt-5">
@@ -134,7 +156,9 @@ const history=useHistory();
         </Link>
       </div>
 
-      <button id="btn" className="mt-5">
+      <button 
+      // onClick={Login} 
+      id="btn" className="mt-5">
         Login
       </button>
 

@@ -20,17 +20,20 @@ const Home = () => {
     }
   }
 
+  const url = "http://localhost:8000/credentials"
+  const api = "https://api.corplife.at/v0/auth/tokens"
+
 
   const [data ,setData] = useState([])
 
   useEffect(()=>{
-    fetch("http://localhost:8000/credentials")
+    fetch(url)
     .then((res)=>{
       return res.json()
     }).then((data)=>{
       setData(data)
     }).catch((err)=>{
-      console.log(err);
+      // console.log(err);
     })
   })
 
